@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security Awareness Lab</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      text-align: center;
+      padding: 40px 16px;
+    }
+    main {
+      max-width: 380px;
+      margin: auto;
+      padding: 24px;
+      background: white;
+      border-radius: 12px;
+    }
+    .notice {
+      background: #fff3cd;
+      padding: 12px;
+      border-radius: 6px;
+    }
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Security Awareness Lab</h1>
+    <p class="notice">
+      Training simulation only. Never enter real credentials.
+    </p>
+
+    <form id="trainingForm">
+      <input placeholder="Dummy username" autocomplete="off" required>
+      <input type="password" placeholder="Dummy password"
+             autocomplete="off" required>
+      <button type="submit">Run simulation</button>
+    </form>
+
+    <p id="result" aria-live="polite"></p>
+  </main>
+
+  <script>
+    document.getElementById("trainingForm").addEventListener(
+      "submit", function(event) {
+        event.preventDefault();
+        this.reset();
+        document.getElementById("result").textContent =
+          "Simulation complete. Always verify a website before signing in.";
+      }
+    );
+  </script>
+</body>
+</html>
